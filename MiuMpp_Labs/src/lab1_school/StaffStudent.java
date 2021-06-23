@@ -7,7 +7,7 @@ public class StaffStudent extends Student{
 	private Staff staff;
 
 	public StaffStudent(String name, String phone, int age, double salary, LocalDate startDate, double gpa) {
-		super(name, phone, age, salary);
+		super(name, phone, age, gpa);
 		this.setStartDate(startDate);
 		
 		this.staff = new Staff(name, phone, age, salary);
