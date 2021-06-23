@@ -2,7 +2,7 @@ package lab1_school;
 
 import java.util.List;
 
-public abstract class Person {
+public class Person {
 	protected String name;
 	protected String phone;
 	protected int age;
@@ -45,8 +45,12 @@ public abstract class Person {
 		return;
 	}
 
-	protected abstract void addCourse(Course course);
+	protected void addCourse(Course course) {
+		return;
+	}
 
-	protected abstract List<Course> getCourses();
+	protected List<Course> getCourses(){
+		return null;
+	}
 
 }

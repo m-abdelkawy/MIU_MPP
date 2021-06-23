@@ -22,16 +22,6 @@ public class Staff extends Person{
 	}
 
 
-	@Override
-	protected void addCourse(Course course) {
-		return;
-	}
-
-
-	@Override
-	protected List<Course> getCourses() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }
