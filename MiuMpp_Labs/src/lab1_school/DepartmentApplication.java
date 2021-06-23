@@ -73,8 +73,8 @@ public class DepartmentApplication {
 			System.out.println(course.getNumber());
 		}*/
 		
-		Person stStusent = new StaffStudent("Ahmed", "", 51, 10000, null,3.8);
-		dept.addPerson(stStusent);
+		//Person ahmedAli = new StaffStudent("Ahmed Ali", "", 51, 10000, null,3.8);
+		//dept.addPerson(ahmedAli);
 		/**/
 
 		double totsalary = 0;
