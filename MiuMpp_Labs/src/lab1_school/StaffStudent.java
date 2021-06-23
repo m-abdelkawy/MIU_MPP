@@ -2,15 +2,15 @@ package lab1_school;
 
 import java.time.LocalDate;
 
-public class StaffStudent extends Staff implements IStaffStudent{
+public class StaffStudent extends Student{
 	private LocalDate startDate;
-	private Student student;
+	private Staff staff;
 
 	public StaffStudent(String name, String phone, int age, double salary, LocalDate startDate, double gpa) {
 		super(name, phone, age, salary);
 		this.setStartDate(startDate);
 		
-		this.student = new Student(name, phone, age, gpa);
+		this.staff = new Staff(name, phone, age, salary);
 	}
 
 	public LocalDate getStartDate() {
@@ -22,15 +22,8 @@ public class StaffStudent extends Staff implements IStaffStudent{
 	}
 
 
-	@Override
-	public double getGpa() {
+	public double getSalary() {
 		// delegation
-		return this.student.getGpa();
-	}
-	
-	@Override
-	public void addStudentCourse(Course course) {
-		// delegation (This is different from the addCourse in the Staff class that this class inherits)
-		this.student.addCourse(course);
+		return this.staff.getSalary();
 	}
 }
