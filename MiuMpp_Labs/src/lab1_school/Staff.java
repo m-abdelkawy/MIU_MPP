@@ -2,7 +2,7 @@ package lab1_school;
 
 import java.util.List;
 
-public class Staff extends Person {
+public class Staff extends Person{
 	private double salary;
 	
 	public Staff(String name, String phone, int age, double salary) {
