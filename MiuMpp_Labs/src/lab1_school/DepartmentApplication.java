@@ -73,7 +73,7 @@ public class DepartmentApplication {
 			System.out.println(course.getNumber());
 		}*/
 		
-		Person stStusent = new StaffStudent("Ahmed", "", 51, 10000, 3.8, null);
+		Person stStusent = new StaffStudent("Ahmed", "", 51, 10000, null,3.8);
 		dept.addPerson(stStusent);
 		/**/
 

@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Student extends Person {
+public class Student extends Person implements IStudent {
 	private double gpa;
 	private List<Course> lstCourse;
 	
 	public Student(String name, String phone, int age, double gpa) {
 		super(name, phone, age);
-		this.gpa = gpa;
+		this.setGpa(gpa);
 		lstCourse = new ArrayList<Course>();
 	}
 
@@ -21,14 +21,13 @@ public class Student extends Person {
 	
 
 	public double getTotalUnits() {
-		return 0;
+		int res = 0;
+		for (Course course : lstCourse) {
+			res+=course.getUnits();
+		}
+		return res;
 	}
 
-	@Override
-	public double getSalary() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	protected List<Course> getCourses(){
@@ -36,5 +35,14 @@ public class Student extends Person {
 		Course[] res = new Course[lstCourse.size()];
 		System.arraycopy(lstCourse.toArray(), 0, res, 0, lstCourse.size());
 		return Arrays.asList(res);
+	}
+
+	@Override
+	public double getGpa() {
+		return gpa;
+	}
+
+	public void setGpa(double gpa) {
+		this.gpa = gpa;
 	}
 }

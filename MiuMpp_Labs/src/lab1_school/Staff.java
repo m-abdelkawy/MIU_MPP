@@ -13,8 +13,12 @@ public class Staff extends Person {
 
 	@Override
 	public double getSalary() {
-		// TODO Auto-generated method stub
 		return salary;
+	}
+	
+	@Override
+	public void setSalary(double salary) {
+		this.salary = salary;
 	}
 
 

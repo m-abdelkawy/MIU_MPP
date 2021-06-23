@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class Faculty extends Person {
 	private double salary;
 	private List<Course> lstCourse;
@@ -33,10 +34,23 @@ public class Faculty extends Person {
 		System.arraycopy(lstCourse.toArray(), 0, res, 0, lstCourse.size());
 		return Arrays.asList(res);
 	}
+	
+	public List<Student> getAllStudents(){
+		/*Not implemented yet
+		 * The work is done in the method (showStudentsByFacultyMember) in the Department class
+		 * But I think get students of the instructor should be the responsibility of this class
+		 * same as the getCourses above
+		 */
+		throw new UnsupportedOperationException();
+	}
 
 	@Override
 	public double getSalary() {
-		// TODO Auto-generated method stub
 		return salary;
+	}
+	
+	@Override
+	public void setSalary(double salary) {
+		this.salary = salary;
 	}
 }
