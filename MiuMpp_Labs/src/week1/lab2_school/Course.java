@@ -1,4 +1,4 @@
-package lab1_school;
+package week1.lab2_school;
 
 public class Course {
 	private String number;

@@ -1,4 +1,4 @@
-package lab2_HRApplication;
+package week1.lab3_HRApplication;
 
 import java.util.ArrayList;
 import java.util.List;

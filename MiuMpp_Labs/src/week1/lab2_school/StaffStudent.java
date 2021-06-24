@@ -1,4 +1,4 @@
-package lab1_school;
+package week1.lab2_school;
 
 import java.time.LocalDate;
 
