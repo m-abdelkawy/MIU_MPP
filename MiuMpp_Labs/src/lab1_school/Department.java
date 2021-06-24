@@ -48,7 +48,7 @@ public class Department {
 
 		for (Course course : lstFacultyCourses) {
 			lstMember.stream().filter(s -> s.getCourses() != null && s.getCourses().contains(course)).forEach(s -> {
-				if (s instanceof Student && !lstStudentName.contains(s.name)) //in order not to duplicate names
+				if (s instanceof Student && !lstStudentName.contains(s.name)) // in order not to duplicate names
 					lstStudentName.add(s.name);
 			});
 		}
