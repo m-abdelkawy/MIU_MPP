@@ -51,11 +51,11 @@ public class Department {
 	}
 
 	public void printReportingHierarchy() {
-		System.out.println(this.name + " Reporting Hierarchy");
+		System.out.println(this.name + " Reporting Hierarchy:---");
 		Position topPosition = null;
 		for (Position position : lstPosition) {
 			if(position.getSuperior() == null || !position.getSuperior().getDepartment().equals(this)) {
-				topPosition = position;
+				topPosition = position.getSuperior();
 			}
 		}
 		

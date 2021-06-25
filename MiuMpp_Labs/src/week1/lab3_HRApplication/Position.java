@@ -1,6 +1,7 @@
 package week1.lab3_HRApplication;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Position {
@@ -8,6 +9,9 @@ public class Position {
 	private String description;
 	private Employee employee;
 	private Department department;
+
+	private static String SPACING = "";
+	private static boolean ISNEWLVL = false;
 
 	private Position superior;
 	private List<Position> lstInferior;
@@ -51,6 +55,26 @@ public class Position {
 			sb.append(inferior.getDownLine().replaceAll("(?m)^", "  "));
 		}
 		return sb.toString();
+	}
+
+	public void printDownLine2() {
+		System.out.println(SPACING + name);
+		boolean sameLvl = false;
+		int lvlCount = 0;
+		for (Position position : lstInferior) {
+			if (!sameLvl) {
+				SPACING = SPACING.concat("  ");
+				lvlCount++;
+			}
+			position.printDownLine2();
+			if (sameLvl && position.name.equals(lstInferior.get(lstInferior.size() - 1).name)) {
+				lvlCount++;
+				for (int i = 0; i < lvlCount; i++) {
+					SPACING = SPACING.substring(0, SPACING.lastIndexOf(" ") - 1);
+				}
+			}
+			sameLvl = true;
+		}
 	}
 
 	public Position getSuperior() {

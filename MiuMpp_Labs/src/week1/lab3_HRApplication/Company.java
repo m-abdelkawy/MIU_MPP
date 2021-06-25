@@ -29,4 +29,8 @@ public class Company {
 		}
 		return companyTotalSalary;
 	}
+	
+	public List<Department> getDepartments(){
+		return lstDepartment;
+	}
 }
