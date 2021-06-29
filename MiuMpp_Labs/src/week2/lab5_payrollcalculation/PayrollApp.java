@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class PayrollApp {
 
 	public static void main(String[] args) {
-		/*Employee empSalaried1 = new Salaried(100000);
+		Employee empSalaried1 = new Salaried(100000);
 		
 		empSalaried1.calcCompensation(1,2021);
 		empSalaried1.calcCompensation(2,2021);
@@ -18,7 +18,7 @@ public class PayrollApp {
 		empHourly1.calcCompensation(2,2021);
 		empHourly1.calcCompensation(3,2021);
 		empHourly1.calcCompensation(4,2021);
-		empHourly1.calcCompensation(5,2021);*/
+		empHourly1.calcCompensation(5,2021);
 		
 		Employee empCommissioned1 = new Commissioned(2000);
 		Order o11 = new Order(1, LocalDate.of(2021, 1, 10), 500,(Commissioned)empCommissioned1);
