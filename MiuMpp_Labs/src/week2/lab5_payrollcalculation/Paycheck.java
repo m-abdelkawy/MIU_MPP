@@ -62,12 +62,13 @@ public final class Paycheck {
 
 	public void print() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(String.format("for month #%d: %n", payPeriod.getStartDate().getMonth().getValue()));
-		sb.append(String.format("GrossPay: %.2f$%n%n", grossPay));
+		//sb.append(String.format("for month #%d: %n", payPeriod.getStartDate().getMonth().getValue()));
+		sb.append(payPeriod + "\n");
+		sb.append(String.format("GrossPay: $%.2f%n%n", grossPay));
 		sb.append(String.format(
-				"Taxes breakdown:-%nFICA: %.2f$%nState: %.2f$%nLocal: %.2f$%nMedicare: %.2f$%nSocialSecurity: %.2f$%n%n",
+				"Taxes breakdown:-%nFICA: $%.2f%nState: $%.2f%nLocal: $%.2f%nMedicare: $%.2f%nSocialSecurity: $%.2f%n%n",
 				fica, state, local, medicare, socialSecurity));
-		sb.append(String.format("Net Salary: %.2f$%n", getNetPay()));
+		sb.append(String.format("Net Salary: $%.2f%n", getNetPay()));
 		System.out.println(sb.toString());
 		System.out.println("__________________________\n");
 	}

@@ -1,14 +1,15 @@
 package week2.lab5_payrollcalculation;
 
 import java.time.LocalDate;
+import java.time.YearMonth;
 
 public final class DateRange {
 	private final LocalDate startDate;
 	private final LocalDate endDate;
 
-	public DateRange(LocalDate startDate, LocalDate endDate) {
-		this.startDate = startDate;
-		this.endDate = endDate;
+	public DateRange(LocalDate date) {
+		this.startDate = LocalDate.of(date.getYear(), date.getMonth(), getFirstDayOfMonth(date));
+		this.endDate = LocalDate.of(date.getYear(), date.getMonth(), getLastDayOfMonth(date));
 	}
 
 	public boolean isInRange(LocalDate date) {
@@ -18,15 +19,15 @@ public final class DateRange {
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException();
+		return "From " + startDate + " to " + endDate;
 	}
 
-	public static void getFirstDayOfMonth() {
-		throw new UnsupportedOperationException();
+	public static int getFirstDayOfMonth(LocalDate date) {
+		return YearMonth.of(date.getYear(), date.getMonth()).atDay(1).getDayOfMonth();
 	}
 
-	public static void getLastDayOfMonth() {
-		throw new UnsupportedOperationException();
+	public static int getLastDayOfMonth(LocalDate date) {
+		return YearMonth.of(date.getYear(), date.getMonth()).atEndOfMonth().getDayOfMonth();
 	}
 
 	public LocalDate getStartDate() {

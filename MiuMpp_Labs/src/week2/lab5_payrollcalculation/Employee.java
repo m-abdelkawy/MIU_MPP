@@ -20,15 +20,18 @@ public abstract class Employee {
 	}
 
 	public void print() {
+		System.out.println("*=====================================*");
 		System.out.println("Employee with ID: " + empId);
+		System.out.println("*=====================================*");
 		for (Paycheck paycheck : lstPaycheck) {
 			paycheck.print();
 		}
+		System.out.println("*__________________________________*______________________________*");
 	}
 
 	Paycheck calcCompensation(int month, int year) {
-		Paycheck paycheck = new Paycheck(new DateRange(LocalDate.of(year, month, 1), LocalDate.of(year, month, 28)),
-				this);
+		DateRange dr = new DateRange(LocalDate.of(year, month, 1));
+		Paycheck paycheck = new Paycheck(dr, this);
 
 		addPaycheck(paycheck);
 		return paycheck;

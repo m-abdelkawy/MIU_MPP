@@ -8,6 +8,7 @@ public class Commissioned extends Employee {
 	private double baseSalary;
 	private List<Order> lstOrder;
 	private static int COMMISSIONED_ID = 1;
+	private static final double COMMISSION_RATE = 0.07;
 
 	public Commissioned(double baseSalary) {
 		super("Commissioned#" + COMMISSIONED_ID++);
@@ -26,7 +27,7 @@ public class Commissioned extends Employee {
 		double grossPay = 0;
 		for (Order order : lstOrder) {
 			if (dateRange.isInRange(order.getOrderDate())) {
-				commission += order.getOrderAmount() * 0.07;
+				commission += order.getOrderAmount() * COMMISSION_RATE;
 			}
 		}
 		grossPay = baseSalary + commission;
