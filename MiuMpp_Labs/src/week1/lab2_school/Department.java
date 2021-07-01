@@ -9,7 +9,7 @@ public class Department {
 
 	public Department(String _name) {
 		name = _name;
-		lstMember = new ArrayList<Person>();
+		this.lstMember = new ArrayList<Person>();
 	}
 
 	public double getTotalSalary() {
