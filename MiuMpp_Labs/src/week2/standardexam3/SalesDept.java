@@ -4,7 +4,7 @@ public class SalesDept extends Department {
 	
 	
 	public void requestMarketingMaterials() {
-		//not implemented
+		throw new UnsupportedOperationException();
 	}
 
 	@Override

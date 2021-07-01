@@ -4,8 +4,7 @@ public class BillingDept extends Department{
 	//implement
 	
 	public String monthlyReport() {
-		//not implemented
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override

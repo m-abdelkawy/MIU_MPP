@@ -4,7 +4,7 @@ public class MarketingDept extends Department {
 	//implement
 	
 	public void applyForJob() {
-		//not implemented
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
