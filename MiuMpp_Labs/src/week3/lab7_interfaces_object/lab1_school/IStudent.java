@@ -1,4 +1,4 @@
-package week1.lab2_school;
+package week3.lab7_interfaces_object.lab1_school;
 
 public interface IStudent {
 	double getGpa();

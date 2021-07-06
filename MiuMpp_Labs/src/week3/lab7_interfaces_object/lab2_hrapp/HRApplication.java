@@ -1,4 +1,4 @@
-package week1.lab3_HRApplication;
+package week3.lab7_interfaces_object.lab2_hrapp;
 
 import java.time.LocalDate;
 import java.util.List;

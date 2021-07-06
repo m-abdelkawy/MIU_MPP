@@ -1,4 +1,4 @@
-package week1.lab2_school;
+package week1.lab1_school;
 
 import java.io.BufferedReader;
 import java.io.IOException;

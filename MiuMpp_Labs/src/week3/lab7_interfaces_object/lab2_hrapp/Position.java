@@ -1,10 +1,10 @@
-package week1.lab3_HRApplication;
+package week3.lab7_interfaces_object.lab2_hrapp;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
-public class Position {
+public class Position implements Cloneable{
 	private String name;
 	private String description;
 	private Employee employee;
@@ -104,5 +104,37 @@ public class Position {
 
 	public void setDepartment(Department department) {
 		this.department = department;
+	}
+
+	@Override
+	public boolean equals(Object ob) {
+		if (ob == null)
+			return false;
+		if (!(ob instanceof Position))
+			return false;
+		Position pos = (Position) ob;
+		boolean isEqual = this.name.equals(pos.name) && this.description.equals(pos.description)
+				&& this.department.equals(pos.department);
+		return isEqual;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder("[");
+		sb.append(String.format("Name: %s, Description: %s", this.name, this.description));
+		sb.append("]");
+		return sb.toString();
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(name, description, department);
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		Position copy = (Position)super.clone();
+		copy.department = (Department)department.clone();
+		return copy;
 	}
 }
