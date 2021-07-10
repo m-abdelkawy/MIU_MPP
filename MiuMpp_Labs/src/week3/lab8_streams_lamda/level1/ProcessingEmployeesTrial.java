@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 
 public class ProcessingEmployeesTrial {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		// initialize array of Employees
 		Employee[] employees = { new Employee("Jason", "Red", 5000, "IT"), new Employee("Ashley", "Green", 7600, "IT"),
 				new Employee("Matthew", "Indigo", 3587.5, "Sales"),
@@ -48,6 +48,6 @@ public class ProcessingEmployeesTrial {
 		
 		System.out.println(empOptional.orElse(null));
 
-	}
+	}*/
 
 }
