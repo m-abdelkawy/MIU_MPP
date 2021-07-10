@@ -1,6 +1,5 @@
 package week3.standard_exam_lambda;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,7 +10,14 @@ public class EmployeeAdmin {
 	// that belong to an Employee in the input table but that are not on the
 	// socSecNums input list
 	public static List<String> prepareSsnReport(HashMap<String, Employee> table, List<String> socSecNums) {
-		return table.keySet().stream().filter(s -> !socSecNums.contains(s)).sorted().collect(Collectors.toList());
+		//old
+		/*return table.keySet().stream().filter(s -> !socSecNums.contains(s)).sorted().collect(Collectors.toList());*/
+		
+		//new (providing a comparator to the sort method)
+		return table.keySet().stream().filter(s -> !socSecNums.contains(s))
+				.sorted((s1, s2) -> Integer.compare(Integer.parseInt(s1), Integer.parseInt(s2)))
+				.collect(Collectors.toList());
+		
 
 	}
 

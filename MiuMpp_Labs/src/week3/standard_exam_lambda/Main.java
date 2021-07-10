@@ -34,7 +34,8 @@ public class Main {
 		};
 											
 		List<Employee> report = EmployeeAdmin.prepareEmpReport(h,  ssns);
-		//Expected output: [(212341557: Hank, 110000), (342892138: Ibu, 100000), (113145657: Rick, 92000), (523421589: Tom, 88000)]
+		//Expected output: 
+		//[(212341557: Hank, 110000), (342892138: Ibu, 100000), (113145657: Rick, 92000), (523421589: Tom, 88000)]
 		System.out.println(report);
 		
 		List<String> report2 = EmployeeAdmin.prepareSsnReport(h,  ssns);
