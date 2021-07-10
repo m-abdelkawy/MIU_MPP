@@ -1,0 +1,38 @@
+a.	Name the differences between imperative and functional programming
+	01. Programmer's focus
+		Imperative approach: how to perform tasks and how to track changes in state
+		Functional approach: what information is desired and what transformations are required
+	02. State changes
+		Imperative approach: important
+		Functional approach: non-existent
+	03. Order of execution
+		Imperative approach: important
+		Functional approach: low importance
+	04. Primary flow control
+		Imperative approach: Loops, conditionals, and function calls
+		Functional approach: function calls
+	05. Primary manipulation unit
+		Imperative approach: Instances of structs(in C#, don't know if there is equivalent in Java) or classes
+		Functional approach: Function as first-class objects and data collections
+		
+	ref: https://docs.microsoft.com/en-us/dotnet/standard/linq/functional-vs-imperative-programming
+	ref: https://joshldavis.com/2013/09/30/difference-between-imperative-and-functional-part-1/
+	
+
+b.	Explain the meaning of declarative programming. Give an example.
+	a style of building the structure and elements of computer programs
+	that expresses the logic of a computation without describing its control flow.
+
+	Examples: functional programming, sql programming where sql statements describe 
+		the logic but the actual execution plan is managed by the DBMS
+		
+	ref: https://en.wikipedia.org/wiki/Declarative_programming
+
+c.	Name the benefits of including functional style programming in Java
+	01. programs are more compact, easier to read and write
+	02. programs are thread-safe
+	03. Easier to demonstrate correctness of functional program
+	04. Easier to test; a subroutine is less likely to fail tomorrow if it passed today with no side effects
+	05. Facilitates parallelism
+	
+	ref: page 5 of the W3D2 lecture file
