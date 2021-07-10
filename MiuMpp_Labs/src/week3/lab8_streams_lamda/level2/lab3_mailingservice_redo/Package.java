@@ -4,8 +4,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import week3.lab8_streams_lamda.level2.lab3_mailingservice_redo.dtos.PackageLowestPriceDto;
 import week3.lab8_streams_lamda.level2.lab3_mailingservice_redo.mailingserviceprovider.IMailingServiceProvider;
-
 
 public class Package {
 	private String description;
@@ -39,32 +39,17 @@ public class Package {
 	}
 
 	public void calcLowestPrice(List<IMailingServiceProvider> lstCarrier) {
-		double packagePrice = Double.MAX_VALUE;
-		String provider = null;
 
-		double carrierPrice = 0;
-		
-		double minPrice = lstCarrier.stream().mapToDouble(c->c.calculatePrice(this)).min().orElse(0d);
+		PackageLowestPriceDto dto = lstCarrier.stream()
+				.map(c -> new PackageLowestPriceDto(c.calculatePrice(this), c.getName()))
+				.sorted((o1, o2) -> o1.price.compareTo(o2.price)).findFirst().orElse(null);
 
+		lowestPrice = user.getDiscountCategory() == null ? dto.price
+				: dto.price * (1 - user.getDiscountCategory().getDiscountRatio());
 
-		/*String providerName = lstCarrier.stream().map(c->new Object() {
-			final Double price=c.calculatePrice(this);
-			String provString = c.getName();
-		}).sorted((o1,o2)->o1.price.compareTo(o2.price)).findFirst().orElse(null);*/
-
-		for (IMailingServiceProvider carrier : lstCarrier) {
-			carrierPrice = carrier.calculatePrice(this);
-			if (carrierPrice < packagePrice) {
-				packagePrice = carrierPrice;
-				provider = carrier.getName();
-			}
-		}
-
-		lowestPrice = user.getDiscountCategory() == null ? packagePrice
-				: packagePrice * (1 - user.getDiscountCategory().getDiscountRatio());
-
-		setLowestPriceProvider(provider);
-		//System.out.println(String.format("%s%10s%.2f%10s", description, "$", finalPrice, provider));
+		setLowestPriceProvider(dto.provider);
+		// System.out.println(String.format("%s%10s%.2f%10s", description, "$",
+		// finalPrice, provider));
 	}
 
 	public double getPrice() {
