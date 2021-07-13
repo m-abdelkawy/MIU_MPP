@@ -8,13 +8,13 @@ public class Singleton {
 		incrementCounter();
 	}
 
-	public synchronized static Singleton getInstance() {
+	public  static Singleton getInstance() {
 		if (instance == null)
 			instance = new Singleton();
 		return instance;
 	}
 
-	private synchronized static void incrementCounter() {
+	private static void incrementCounter() {
 		counter++;
 	}
 }
