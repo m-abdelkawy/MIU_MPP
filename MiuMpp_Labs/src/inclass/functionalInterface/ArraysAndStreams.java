@@ -1,22 +1,27 @@
 package inclass.functionalInterface;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class ArraysAndStreams {
 
 	public static void main(String[] args) {
-		String[] strings = { "Red", "orange", "Yellow", "green", "Blue", "indigo", "Violet" };
+		Integer[] values = { 2, 9, 5, 0, 3, 7, 1, 4, 8, 6 };
+
+		// Display original values
+		System.out.println("Original Values: \n" + Arrays.asList(values));
 
 		System.out.println(
-				String.format("%s", Arrays.stream(strings).map(String::toUpperCase).collect(Collectors.toList())));
-		
-		List<String> lstStringM = Arrays.stream(strings).filter(s->s.compareToIgnoreCase("m")>0)
-				.sorted(String.CASE_INSENSITIVE_ORDER.reversed()) //o r v y //reversed: y v r o
-				.collect(Collectors.toList());
+				String.format("%nSorted Ascending:%n%s", Arrays.stream(values).sorted().collect(Collectors.toList())));
 
-				System.out.println(lstStringM);
+		System.out.println(String.format("%nSorted Descending:%n%s",
+				Arrays.stream(values).sorted((x, y) -> Integer.compare(y, x)).collect(Collectors.toList())));
+
+		System.out.println(String.format("%nValues greater than 4:%n%s",
+				Arrays.stream(values).filter(x -> x > 4).collect(Collectors.toList())));
+		
+		System.out.println(String.format("%nValues greater than 4 Sorted:%n%s",
+				Arrays.stream(values).filter(x -> x > 4).sorted().collect(Collectors.toList())));
 	}
 
 }
